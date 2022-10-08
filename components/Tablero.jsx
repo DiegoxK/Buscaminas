@@ -165,6 +165,25 @@ function Tablero({ playState, losed, setLosed, win, setWin, setBanderas }) {
     }
   };
 
+  const autofill = (fila, columna) => {
+    if (losed || win) return;
+
+    if (tablero[fila][columna] !== 0) {
+      const vecinos = obtenerVecinos(fila, columna, filas, columnas);
+      const banderas = vecinos.filter(
+        (vecino) => covered[vecino[0]][vecino[1]] === "flag"
+      ).length;
+
+      if (banderas === tablero[fila][columna]) {
+        vecinos.map((vecino) => {
+          if (covered[vecino[0]][vecino[1]] === 0) {
+            descubrir(vecino[0], vecino[1]);
+          }
+        });
+      }
+    }
+  };
+
   useEffect(() => {
     setTablero(buscaminas(filas, columnas, minas));
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -223,6 +242,9 @@ function Tablero({ playState, losed, setLosed, win, setWin, setBanderas }) {
                   <td
                     onContextMenu={(e) => {
                       e.preventDefault();
+                    }}
+                    onClick={() => {
+                      autofill(i, j);
                     }}
                     key={j}
                     className={`w-10 h-10 text-center bg-gray-900 ${colores[columna]} not-selectable`}
