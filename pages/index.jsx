@@ -9,9 +9,9 @@ export default function Home() {
   const [losed, setLosed] = useState(false);
   const [win, setWin] = useState(false);
   const [playState, setPlayState] = useState({
-    filas: 8,
-    columnas: 8,
-    minas: 10,
+    filas: 16,
+    columnas: 30,
+    minas: 99,
   });
 
   const [banderas, setBanderas] = useState(playState.minas);
