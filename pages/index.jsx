@@ -41,9 +41,9 @@ export default function Home() {
                   setLosed(false);
                   setWin(false);
                   setPlayState({
-                    filas: 8,
-                    columnas: 8,
-                    minas: 10,
+                    filas: 16,
+                    columnas: 30,
+                    minas: 99,
                   });
                   setBanderas(playState.minas);
                 }}
