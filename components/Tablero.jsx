@@ -2,15 +2,7 @@ import { useEffect, useState } from "react";
 import { GrFlagFill } from "react-icons/gr";
 import { BsCircleFill } from "react-icons/bs";
 
-function Tablero({
-  playState,
-  setPlayState,
-  losed,
-  setLosed,
-  win,
-  setWin,
-  setBanderas,
-}) {
+function Tablero({ playState, losed, setLosed, win, setWin, setBanderas }) {
   const { filas, columnas, minas } = playState;
 
   const colores = {
@@ -190,6 +182,7 @@ function Tablero({
     if (coveredCells === minas) {
       setWin(true);
     }
+    console.log(coveredCells, minas);
   }, [columnas, covered, filas, minas, setWin]);
 
   return (

@@ -19,7 +19,7 @@ export default function Home() {
   const onchange = (e) => {
     setPlayState({
       ...playState,
-      [e.target.name]: e.target.value,
+      [e.target.name]: parseInt(e.target.value),
     });
   };
 
