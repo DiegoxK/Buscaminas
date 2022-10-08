@@ -221,9 +221,6 @@ function Tablero({
                     onContextMenu={(e) => {
                       marcar(e, i, j);
                     }}
-                    onClick={() => {
-                      descubrir(i, j);
-                    }}
                     key={j}
                     className={`w-10 h-10 bg-gray-800 text-center hover:bg-gray-700 text-green-600 not-selectable`}
                   >
