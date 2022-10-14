@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import Tablero from "./components/Tablero";
+import Tablero from "./Tablero";
 import { BsFillGearFill } from "react-icons/bs";
 import Head from "next/head";
 
