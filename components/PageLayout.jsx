@@ -1,16 +1,18 @@
 import Head from "next/head";
+import ParticlesAnimation from "./ParticlesAnimation";
 import SideBar from "./SideBar";
 
-function PageLayout({ children, title = "Buscaminas" }) {
+function PageLayout({ children }) {
   return (
     <>
       <Head>
-        <title>{title}</title>
+        <title>Home!</title>
         <meta name="description" content="Inicio!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="bg-gray-800 text-white">
-        <SideBar />
+      <SideBar />
+      <div className="ml-16 flex flex-col min-h-max bg-gray-800 text-white">
+        <ParticlesAnimation />
         <PageContent>{children}</PageContent>
       </div>
     </>
@@ -18,7 +20,7 @@ function PageLayout({ children, title = "Buscaminas" }) {
 }
 
 const PageContent = ({ children }) => {
-  return <div className="min-h-screen ml-16">{children}</div>;
+  return <div className="absolute h-full w-avaible">{children}</div>;
 };
 
 export default PageLayout;

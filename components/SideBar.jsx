@@ -1,12 +1,19 @@
 import Link from "next/link";
-import { AiFillFire } from "react-icons/ai";
+import { AiFillHome, AiFillFire } from "react-icons/ai";
 import { HiNewspaper } from "react-icons/hi";
 
 function SideBar() {
   return (
-    <div className="fixed top-0 left-0 h-screen w-16 m-0 flex flex-col bg-gray-900 text-white shadow-lg">
+    <div className="fixed top-0 left-0 h-screen w-16 m-0 flex flex-col bg-gray-900 text-white shadow-lg z-10">
       <i>
-        <SideBarIcon text="Buscamina!" icon={<AiFillFire size="28" />} />
+        <SideBarIcon text="Home" icon={<AiFillHome size="28" />} />
+      </i>
+      <i>
+        <SideBarIcon
+          href="/buscaminas"
+          text="Buscamina!"
+          icon={<AiFillFire size="28" />}
+        />
       </i>
       <i>
         <SideBarIcon
