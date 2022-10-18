@@ -15,7 +15,7 @@ export default function news({ articles }) {
         <div className="bg-gray-700 w-full self-start p-5 flex">
           <Image
             width={390}
-            height={250}
+            height={230}
             src={recent.urlToImage}
             alt="most recent"
           />
