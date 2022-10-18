@@ -7,16 +7,11 @@ export default function ParticlesAnimation() {
     await loadFull(engine);
   }, []);
 
-  const particlesLoaded = useCallback(async (container) => {
-    await console.log(container);
-  }, []);
-
   return (
     <Particles
       id="tsparticles"
       className="relative h-screen"
       init={particlesInit}
-      loaded={particlesLoaded}
       options={{
         fullScreen: {
           enable: false,

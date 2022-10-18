@@ -1,15 +1,14 @@
-import Head from "next/head";
 import ParticlesAnimation from "./ParticlesAnimation";
 import SideBar from "./SideBar";
+import Router from "next/router";
+import NProgress from "nprogress";
+
+NProgress.configure({ showSpinner: false });
+NProgress.configure({ parent: "#content" });
 
 function PageLayout({ children }) {
   return (
     <>
-      <Head>
-        <title>Home!</title>
-        <meta name="description" content="Inicio!" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <SideBar />
       <div className="ml-16 flex flex-col min-h-max bg-gray-800 text-white">
         <ParticlesAnimation />
@@ -20,7 +19,18 @@ function PageLayout({ children }) {
 }
 
 const PageContent = ({ children }) => {
-  return <div className="absolute h-full w-avaible">{children}</div>;
+  Router.events.on("routeChangeStart", () => {
+    NProgress.start();
+  });
+  Router.events.on("routeChangeComplete", () => {
+    NProgress.done();
+  });
+
+  return (
+    <div id="content" className="absolute h-full w-avaible">
+      {children}
+    </div>
+  );
 };
 
 export default PageLayout;

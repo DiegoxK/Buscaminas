@@ -8,13 +8,13 @@ export default function news({ articles }) {
       <Head>
         <title>News App</title>
       </Head>
-      <div className="m-4 flex items-center flex-col justify-center">
-        <h1 className="text-5xl mb-5 font-bold text-green-500">
+      <div className="mx-5 flex items-center flex-col justify-center">
+        <h1 className="text-5xl mt-3 bg-gray-700 w-full text-center p-3 mb-3 font-bold text-green-500">
           TechCrunch News
         </h1>
         <div className="bg-gray-700 w-full self-start p-5 flex">
           <Image
-            width={370}
+            width={390}
             height={250}
             src={recent.urlToImage}
             alt="most recent"
@@ -34,8 +34,8 @@ export default function news({ articles }) {
           </div>
         </div>
       </div>
-      <div className="mx-4 mb-5">
-        <div className="grid  grid-flow-col overflow-x-auto overscroll-contain gap-3 auto-cols-[21%] snap-x news-scroll">
+      <div className="mx-4 my-3">
+        <div className="grid grid-flow-col overflow-x-auto overscroll-contain gap-3 auto-cols-[21%] snap-x news-scroll">
           {articles.length === 0 && <h1>No articles</h1>}
           {articles.length > 0 &&
             articles.map((article, index) => (
