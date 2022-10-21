@@ -54,3 +54,12 @@ svg {
   border: .1em solid #37dc73;
   border-radius: 100vw;
 }
+
+.chat::after {
+  content: '';
+  width: 0; 
+  height: 0; 
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 30px solid#202225;
+}

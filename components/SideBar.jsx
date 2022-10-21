@@ -11,7 +11,7 @@ function SideBar() {
       <i>
         <SideBarIcon
           href="/buscaminas"
-          text="Buscamina!"
+          text="Buscaminas!"
           icon={<AiFillFire size="28" />}
         />
       </i>
