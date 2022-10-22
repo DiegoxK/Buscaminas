@@ -77,7 +77,7 @@ export default function Buscaminas() {
             <h1 className="text-5xl font-bold mb-5 text-green-500">
               Buscaminas
             </h1>
-            <Image width={200} height={200} src="/Kokomi 4.png" alt="Jean1" />
+            <Image width={200} height={200} src="/Sucrose 2.png" alt="Jean1" />
             <div className="mt-5">
               <button
                 className="bg-green-600 hover:bg-green-500 mr-3 text-white font-bold py-2 px-4 rounded"
